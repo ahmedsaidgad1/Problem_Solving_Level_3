@@ -16,15 +16,19 @@ int main()
     cout << "Linked List Content : ";
     mydblinkedlist.Print_List();
 
-    clsDblLinkedList<int>::Node *N1 = mydblinkedlist.Find_Node(2);
+    clsDblLinkedList<int>::Node *N1 = mydblinkedlist.Find_Node(5);
     if (N1 != NULL)
     {
-        mydblinkedlist.Insert_After(N1, 207);
+        mydblinkedlist.Insert_After(N1, 6);
     }
     cout << "After Insert        : ";
     mydblinkedlist.Print_List();
 
     cout << "Number of items in the linked list: " << mydblinkedlist.Size() << endl;
+
+    mydblinkedlist.Reverse();
+    cout <<"Linked list after reverse: ";
+    mydblinkedlist.Print_List();
 
     cout << "Executing .Clear()." << endl;
     mydblinkedlist.Clear();
