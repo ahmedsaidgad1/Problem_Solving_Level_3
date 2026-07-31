@@ -16,6 +16,11 @@ public:
 
     Node *head = NULL;
 
+    ~clsDblLinkedList()
+    {
+        Clear();
+    }
+
     void Insert_At_Begeninning(T value)
     {
         Node *New_Node = new Node();
@@ -204,5 +209,24 @@ public:
         {
             head = temp->prev;
         }
+    }
+
+    Node *Get_Node(int index)
+    {
+        int count = 0;
+        if (index < 0)
+            return NULL;
+
+        Node *current = head;
+        while (current != NULL)
+        {
+            if (count == index)
+            {
+                break;
+            }
+            current = current->next;
+            count++;
+        }
+        return current;
     }
 };
