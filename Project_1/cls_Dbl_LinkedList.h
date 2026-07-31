@@ -229,4 +229,13 @@ public:
         }
         return current;
     }
+
+    void Update_Item(int index, T value)
+    {
+        Node *Item_Node = Get_Node(index);
+        if (Item_Node != NULL)
+        {
+            Item_Node->value = value;
+        }
+    }
 };
