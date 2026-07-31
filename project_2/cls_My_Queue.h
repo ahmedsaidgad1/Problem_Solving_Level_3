@@ -27,7 +27,7 @@ public:
 
     int size()
     {
-        _My_List.Size();
+        return _My_List.Size();
     }
 
     bool Is_Empty()
@@ -37,11 +37,17 @@ public:
 
     T front()
     {
-        return _My_List.Get_Node(0);
+        auto node = _My_List.Get_Node(0);
+        if (node != NULL)
+            return node->value;
+        return T();
     }
 
     T back()
     {
-        return _My_List.Get_Node(size() - 1);
+        auto node = _My_List.Get_Node(size() - 1);
+        if (node != NULL)
+            return node->value;
+        return T();
     }
 };
