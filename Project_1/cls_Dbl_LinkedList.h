@@ -238,4 +238,13 @@ public:
             Item_Node->value = value;
         }
     }
+
+    void Insert_After(int index, T value)
+    {
+        Node *Item_Node = Get_Node(index);
+        if (Item_Node != NULL)
+        {
+            Insert_After(Item_Node, value);
+        }
+    }
 };
