@@ -50,4 +50,52 @@ public:
             return node->value;
         return T();
     }
+
+    T Get_Item_At(int index)
+    {
+        auto node =_My_List.Get_Node(index);
+        if (node != NULL)
+        {
+            return node->value;
+        }
+        return T();
+    }
+
+    void reverse()
+    {
+        _My_List.Reverse();
+    }
+
+    void Update_Item(int index, T value)
+    {
+        auto node = _My_List.Get_Node(index);
+        if (node != NULL)
+        {
+            node->value = value;
+        }
+    }
+
+    void clear()
+    {
+        _My_List.Clear();
+    }
+    
+    void Insert_After(int index, T value)
+    {
+        auto node = _My_List.Get_Node(index);
+        if (node != NULL)
+        {
+            _My_List.Insert_After(node, value);
+        }
+    }
+
+    void Insert_Front(T value)
+    {
+        _My_List.Insert_At_Begeninning(value);
+    }
+
+    void Insert_End(T value)
+    {
+        _My_List.Insert_At_End(value);
+    }
 };
