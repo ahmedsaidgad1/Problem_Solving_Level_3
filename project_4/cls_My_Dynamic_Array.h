@@ -40,6 +40,32 @@ public:
         return _size;
     }
 
+    void Resize(int New_Size)
+    {
+        if (New_Size < 0)
+        {
+            New_Size = 0;
+        }
+
+        T *Temp_Array = new T[new_Size];
+
+        if (New_Size < _size)
+        {
+            _size = New_Size;
+        }
+
+        for (int i = 0; i < _size; i++)
+        {
+            Temp_Array[i] = Original_Array[i];
+        }
+
+        _size = New_Size;
+
+        delete[] Original_Array;
+        Original_Array = Temp_Array;
+        
+    }
+
     bool Is_Empty()
     {
         return (_size == 0 ? true : false);
