@@ -69,6 +69,28 @@ public:
         Original_Array = new T[_size];
     }
 
+    void Delete_Item_At(int index)
+    {
+        if (index < 0 || index >= _size)
+        {
+            return;
+        }
+
+        T *Temp_Array = new T[_size - 1];
+
+        for (int i = 0, j = 0; i < _size; i++)
+        {
+            if (i != index)
+            {
+                Temp_Array[j++] = Original_Array[i];
+            }
+        }
+
+        delete[] Original_Array;
+        Original_Array = Temp_Array;
+        _size--;
+    }
+
     int size()
     {
         return _size;
