@@ -35,6 +35,39 @@ public:
         return true;
     }
 
+    T Get_Item(int index)
+    {
+        if (index < 0 || index >= _size)
+        {
+            return T();
+        }
+
+        for (int i = 0; i < _size; i++)
+        {
+            if (i == index)
+            {
+                return Original_Array[i];
+            }
+        }
+    }
+
+    void Reverse_Array()
+    {
+        for (int i = 0; i < _size / 2; i++)
+        {
+            T temp = Original_Array[i];
+            Original_Array[i] = Original_Array[_size - 1 - i];
+            Original_Array[_size - 1 - i] = temp;
+        }
+    }
+
+    void Clear_Array()
+    {
+        delete[] Original_Array;
+        _size = 0;
+        Original_Array = new T[_size];
+    }
+
     int size()
     {
         return _size;
@@ -42,12 +75,12 @@ public:
 
     void Resize(int New_Size)
     {
-        if (New_Size < 0)
+        if (New_Size < 0)   
         {
             New_Size = 0;
         }
 
-        T *Temp_Array = new T[new_Size];
+        T *Temp_Array = new T[New_Size];
 
         if (New_Size < _size)
         {
@@ -63,7 +96,6 @@ public:
 
         delete[] Original_Array;
         Original_Array = Temp_Array;
-        
     }
 
     bool Is_Empty()
