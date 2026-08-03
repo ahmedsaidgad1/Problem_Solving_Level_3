@@ -49,6 +49,7 @@ public:
                 return Original_Array[i];
             }
         }
+        return T();
     }
 
     void Reverse_Array()
