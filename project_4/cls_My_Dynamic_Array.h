@@ -91,6 +91,16 @@ public:
         _size--;
     }
 
+    void Delete_First_Item()
+    {
+        Delete_Item_At(0);
+    }
+
+    void Delete_Last_Item()
+    {
+        Delete_Item_At(_size - 1);
+    }
+
     int size()
     {
         return _size;
@@ -98,7 +108,7 @@ public:
 
     void Resize(int New_Size)
     {
-        if (New_Size < 0)   
+        if (New_Size < 0)
         {
             New_Size = 0;
         }
