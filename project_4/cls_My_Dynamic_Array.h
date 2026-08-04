@@ -101,6 +101,19 @@ public:
         Delete_Item_At(_size - 1);
     }
 
+    void Delete_Item(T item)
+    {
+        for(int i=0;i<_size,i++)
+        {
+            if(Original_Array[i]==item)
+            {
+                Delete_Item_At(i);
+                return;
+            }
+        }
+
+    }
+
     int size()
     {
         return _size;
@@ -134,6 +147,19 @@ public:
     bool Is_Empty()
     {
         return (_size == 0 ? true : false);
+    }
+
+    void find(T item)
+    {
+        for (int i=0;i<_size;i++)
+        {
+            if (Original_Array[i] == item)
+            {
+                cout << "Item found at index: " << i << endl;
+                return;
+            }
+        }
+        cout << "Item not found in the array." << endl;
     }
 
     void Print_Array()
