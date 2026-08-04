@@ -35,6 +35,53 @@ public:
         return true;
     }
 
+    bool Insert_At(int index,T item)
+    {
+        if (index < 0 || index > _size)
+        {
+            return false;
+        }
+
+        T *Temp_Array = new T[_size + 1];
+
+        for (int i = 0, j = 0; i < _size + 1; i++)
+        {
+            if (i == index)
+            {
+                Temp_Array[i] = item;
+            }
+            else
+            {
+                Temp_Array[i] = Original_Array[j++];
+            }
+        }
+
+        delete[] Original_Array;
+        Original_Array = Temp_Array;
+        _size++;
+        return true;
+    }
+
+    bool Insert_First(T item)
+    {
+        return Insert_At(0, item);
+    }
+
+    bool Insert_Last(T item)
+    {
+        return Insert_At(_size, item);
+    }
+
+    bool Insert_Before(int index, T item)
+    {
+        return Insert_At(index, item);
+    }
+
+    bool Insert_After(int index, T item)
+    {
+        return Insert_At(index + 1, item);
+    }
+
     T Get_Item(int index)
     {
         if (index < 0 || index >= _size)
@@ -103,7 +150,7 @@ public:
 
     void Delete_Item(T item)
     {
-        for(int i=0;i<_size,i++)
+        for(int i=0;i<_size;i++)
         {
             if(Original_Array[i]==item)
             {
