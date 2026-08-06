@@ -45,5 +45,5 @@ g++ -std=c++17 -o main Main.cpp
 ## 👤 Author
 
 **Ahmed Said Gad** — Computer Science student, Ain Shams University
-LinkedIn: [Ahmed Said Gad](https://www.linkedin.com/in/ahmed-said-gad/)
 GitHub: [@ahmedsaidgad1](https://github.com/ahmedsaidgad1)
+LinkedIn: [Ahmed Said Gad](https://www.linkedin.com/in/ahmed-said-gad/)
